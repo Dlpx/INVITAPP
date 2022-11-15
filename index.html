@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>INVITAPP</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">INVITAPP</div>
+        <div class="desplegable" id="desplegable">
+            <nav class="nav-bar ocultar" id="nav-bar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="#añadir" class="nav-link">Añadir</a></li>
+                    <li class="nav-item"><a href="#lista" class="nav-link">Lista</a></li>
+                    <li class="nav-item"><a href="#ver" class="nav-link">Ver</a></li>
+                </ul>
+            </nav>
+            <button id="boton-desplegar"><img id="img-boton" src="./img/flechaMenu.png"
+                    alt="Flecha menu desplegable"></button>
+        </div>
+    </header>
+    <main>
+        <section id="inicio">
+            <h1 id="bienvenida">Bienvenidos</h1>
+            <p class="texto-bienvenida">
+                En <strong>INVITAPP</strong> tendras la posibilidad de organizar tus reuniones añadiendo y quitando
+                invitados, coordinando que trae cada uno de ellos, dividiendo gastos entre todos, y tambien enviando una
+                invitacion por correo a cada uno de ellos si asi lo deseas. <br> <br> Esperamos que puedas sacarle
+                provecho a todas sus funcionalidades para que no vuelvas a estresarte coordinando tu evento. </p>
+        </section>
+        <section id="añadir">
+            <h2 class="subtitulo">Añadir invitado</h2>
+            <form action="#" method="get" id="añadirInvitado">
+                <input type="text" name="nombreInvitado" id="nombreInvitado" placeholder="Nombre del Invitado">
+                <input type="text" name="llevaInvitado" id="llevaInvitado" placeholder="¿Lleva algo? (solo 1 item)">
+                <input type="number" name="gastoInvitado" id="gastoInvitado" placeholder="¿Cuanto gasto?">
+                <input type="email" name="mailInvitado" id="mailInvitado" placeholder="Correo:">
+                <button type="submit" id="añadirInvitado">Añadir invitado</button>
+
+            </form>
+        </section>
+        <section id="lista"><h2 class="subtitulo">Gestion invitados</h2></section>
+        <section id="ver"><h2 class="subtitulo">Gastos generales</h2></section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
