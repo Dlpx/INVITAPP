@@ -12,4 +12,5 @@ function menuDesplegable(){
     imgBoton.classList.toggle("rotar180");
 }
 botonDesplegar.addEventListener("click", menuDesplegable);
-botonesMenu.addEventListener("click", menuDesplegable);
+botonesMenu.forEach(elemento => 
+    elemento.addEventListener("click", menuDesplegable));

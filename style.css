@@ -138,30 +138,94 @@ main #inicio .texto-bienvenida{
 }
 /* Estilo general para sutitulo */
 main section .subtitulo{
+    margin: 50px 0;
     text-align: center;
     font-size: 2.5rem;
     color: var(--color-gris);
 }
 
 /* Estilos secciones */
-main #añadir {
-    width: inherit;
-    height: auto;
-    padding: 0 30px;
-    border: 1px solid black;
+/* TARJETA DE AÑADIR */
+#añadir{
+    width: 100%;
 }
-
-main #añadir #añadirInvitado{
-    border: 1px black solid;
-    
-    margin: auto;
-    width: 350px;
+#añadir .contenedor{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-main #añadir #añadirInvitado input{
-    width: 200px;
+#añadir .contenedor .añadir-tarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px black solid;
+    border-radius: 5%;
+    width: fit-content;
+    padding: 5px;
+    background: linear-gradient(-45deg, var(--color-turquesa), var(--color-verde));
+}
+#añadir .contenedor .añadir-tarjeta:hover{
+    transform: scale(1.1);
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border: 1px black solid;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.937);
+}
+/* items de la tarjeta */
+#añadir .contenedor .añadir-tarjeta .tarjeta #atNumero{
+    align-self: flex-start;
+    margin: 3px 0 0 5px;
+    font-size: larger;
+    font-weight: bolder;
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta #atNombre{
+    font-size: larger;
+    font-weight: bolder;
+    margin: 5px 0;
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta #atCorreo{
+    margin: 10px 6px 5px 6px;
+    color: rgb(165, 165, 165);
+}
+#añadir .contenedor .añadir-tarjeta #btn-tarjeta{
+    margin: 10px;
+    padding: 5px;
+    border: 1px black solid;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.963);
+    cursor: pointer;
+}
+#añadir .contenedor .añadir-tarjeta #btn-tarjeta:active{
+    background-color: rgba(255, 255, 255, 0.719);
+    box-shadow: none;
+}
+
+/* Formulario */
+#añadir .contenedor #añadirForm {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#añadir .contenedor #añadirForm > .inputs{
+    width: 300px;
     height: 50px;
-    border-radius: 20px;
+    padding: 0 3px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 3%;
+    color: var(--color-gris);
+    font-size: 1.5rem;
+}
+#añadir .contenedor #añadirForm > label{
+    width: 300px;
+    height: 20px;
+    margin: 14px 0 0 0;
 }

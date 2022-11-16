@@ -36,17 +36,59 @@
         </section>
         <section id="añadir">
             <h2 class="subtitulo">Añadir invitado</h2>
-            <form action="#" method="get" id="añadirInvitado">
-                <input type="text" name="nombreInvitado" id="nombreInvitado" placeholder="Nombre del Invitado">
-                <input type="text" name="llevaInvitado" id="llevaInvitado" placeholder="¿Lleva algo? (solo 1 item)">
-                <input type="number" name="gastoInvitado" id="gastoInvitado" placeholder="¿Cuanto gasto?">
-                <input type="email" name="mailInvitado" id="mailInvitado" placeholder="Correo:">
-                <button type="submit" id="añadirInvitado">Añadir invitado</button>
-
-            </form>
+            <div class="contenedor">
+                <div class="añadir-tarjeta">
+                    <div class="tarjeta">
+                        <div id="atNumero">01</div>
+                        <div id="atFoto"><img src="./img/Usuarios/Usuario.png" alt="tipo de usuario"></div>
+                        <div id="atNombre">Nombre</div>
+                        <div id="atTrae">Item</div>
+                        <div id="atGasto">$costo</div>
+                        <div id="atCorreo">correo@gmail.com</div>
+                    </div>
+                    <p id="btn-tarjeta" type="submit">Añadir</p>
+                </div>
+                <form action="#" method="get" id="añadirForm">
+                    <label for="nombreInvitado">Nombre del invitado:</label>
+                    <input class="inputs" type="text" name="nombreInvitado" id="nombreInvitado">
+                    <label for="avatarInvitado">Avatar:</label>
+                    <select class="inputs" name="avatarInvitado" id="avatarInvitado">
+                        <option value="ninguno">Ninguno</option>
+                        <option value="artista">Artista</option>
+                        <option value="artisto">Artisto</option>
+                        <option value="beba">Beba</option>
+                        <option value="bebe">Bebe</option>
+                        <option value="cientifica">Cientifica</option>
+                        <option value="cientifico">Cientifico</option>
+                        <option value="constructor">Constructor</option>
+                        <option value="constructora">Constructora</option>
+                        <option value="dieguete">Dieguete</option>
+                        <option value="doctora">Doctora</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="empresaria">Empresaria</option>
+                        <option value="empresario">Empresario</option>
+                        <option value="lio">Lio</option>
+                        <option value="niño">Niño</option>
+                        <option value="niña">Niña</option>
+                        <option value="princesa">Princesa</option>
+                        <option value="bicho">El Bicho</option>
+                        <option value="vaquero">Vaquero</option>
+                    </select>
+                    <label for="llevaInvitado">¿Que lleva? (solo un item)</label>
+                    <input class="inputs" type="text" name="llevaInvitado" id="llevaInvitado">
+                    <label for="gastoInvitado">¿Cuanto gasto?</label>
+                    <input class="inputs" type="number" name="gastoInvitado" id="gastoInvitado">
+                    <label for="mailInvitado">eMail:</label>
+                    <input class="inputs" type="email" name="mailInvitado" id="mailInvitado">
+                </form>
+            </div>
         </section>
-        <section id="lista"><h2 class="subtitulo">Gestion invitados</h2></section>
-        <section id="ver"><h2 class="subtitulo">Gastos generales</h2></section>
+        <section id="lista">
+            <h2 class="subtitulo">Gestion invitados</h2>
+        </section>
+        <section id="ver">
+            <h2 class="subtitulo">Gastos generales</h2>
+        </section>
     </main>
     <script src="./script.js"></script>
 </body>
