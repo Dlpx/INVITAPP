@@ -1,6 +1,7 @@
 //MENU DESPLEGABLE
 let botonDesplegar = document.getElementById("boton-desplegar");
 let botonesMenu = document.querySelectorAll(".nav-link");
+let logoBtn = document.getElementById("logo");
 function menuDesplegable(){
     let desplegable = document.getElementById("desplegable");
     desplegable.classList.toggle("desplegar");
@@ -12,5 +13,6 @@ function menuDesplegable(){
     imgBoton.classList.toggle("rotar180");
 }
 botonDesplegar.addEventListener("click", menuDesplegable);
+logoBtn.addEventListener("click", menuDesplegable);
 botonesMenu.forEach(elemento => 
     elemento.addEventListener("click", menuDesplegable));
