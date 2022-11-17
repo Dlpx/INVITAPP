@@ -26,6 +26,7 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 header .logo {
     width: 100%;
@@ -39,6 +40,7 @@ header .logo {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--color-verde);
     z-index: 10;
+    cursor: pointer;
 }
 header .desplegable {
     position: absolute;
@@ -149,6 +151,7 @@ main section .subtitulo{
 /* TARJETA DE AÑADIR */
 #añadir{
     width: 100%;
+    padding-top: 50px;
     border-bottom: 2px black double;
 }
 #añadir .contenedor{
@@ -191,6 +194,11 @@ main section .subtitulo{
     font-size: larger;
     font-weight: bolder;
     margin: 5px 0;
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta #atGasto{
+    align-self: flex-end;
+    margin: 15px 5px 0 0;
+    border-top: 1px solid black ;
 }
 #añadir .contenedor .añadir-tarjeta .tarjeta #atCorreo{
     margin: 10px 6px 5px 6px;
