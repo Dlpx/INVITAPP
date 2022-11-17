@@ -201,6 +201,8 @@ main section .subtitulo{
 #añadir .contenedor .añadir-tarjeta .tarjeta #atCorreo{
     margin: 10px 6px 5px 6px;
     color: rgb(165, 165, 165);
+    width: 140px;
+    text-align: center;
     word-wrap: break-word;
 }
 #añadir .contenedor .añadir-tarjeta #btnAgregar{
