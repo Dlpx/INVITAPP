@@ -181,7 +181,7 @@ main section .subtitulo{
     width: 150px;
     border: 1px black solid;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.937);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 /* items de la tarjeta */
 #añadir .contenedor .añadir-tarjeta .tarjeta #atNumero{
@@ -239,4 +239,88 @@ main section .subtitulo{
     width: 300px;
     height: 20px;
     margin: 14px 0 0 0;
+}
+
+/* Seccion de Gestion de invitados */
+#lista{
+    width: 100%;
+}
+#lista .contenedorInvitados{
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#lista .contenedorInvitados > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* TARJETA */
+#lista .contenedorInvitados div .contenedorRender{
+    padding: 10px;
+    background: linear-gradient(-45deg, var(--color-turquesa), var(--color-verde));
+    border-radius: 5%;
+    transition: all 150ms ease-in-out;
+}
+#lista .contenedorInvitados div .contenedorRender:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 4px black;
+}
+#lista .contenedorInvitados div .contenedorRender .renderTarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: fit-content;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+#lista .contenedorInvitados div .contenedorRender .renderTarjeta .num{
+    align-self: flex-start;
+    font-size: larger;
+    font-weight: bolder;
+}
+#lista .contenedorInvitados div .contenedorRender .renderTarjeta .nom{
+    font-size: larger;
+    font-weight: bolder;
+    margin: 5px 0;
+}
+#lista .contenedorInvitados div .contenedorRender .renderTarjeta .gas{
+    align-self: flex-end;
+    margin: 15px 5px 0 0;
+    border-top: 1px solid black ;
+}
+#lista .contenedorInvitados div .contenedorRender .renderTarjeta .cor{
+    margin: 10px 6px 5px 6px;
+    color: rgb(165, 165, 165);
+    word-wrap: break-word;
+}
+/* BOTONES DE EDICION */
+.display{
+    display: inline-block !important;
+}
+.scale{
+    transform: scale(1.1);
+}
+#lista .contenedorInvitados div .editarBotones{
+    z-index: 2;
+    position: relative;
+    left: -20px;
+    transition: all 150px ease-in-out;
+    display: none;
+}
+#lista .contenedorInvitados div .editarBotones .btn{
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px black solid;
+    border-radius: 15px 5px 5px 15px;
+    background-color: var(--color-amarillo);
+    cursor: pointer;
+}
+#lista .contenedorInvitados div .editarBotones .btn:hover{
+    background-color: var(--color-anaranjado);
 }

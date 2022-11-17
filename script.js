@@ -19,6 +19,12 @@ botonesMenu.forEach(elemento =>
 
 // ----- SECCION AÑADIR INVITADO ----- //
 let listaInvitados = [];
+//FUNCION RENDERIZADO
+function renderizarInvitados () {
+    listaInvitados.forEach(invitado => {
+
+    })
+}
 
 //Variables formulario:
 let numeroActualizado;
@@ -103,4 +109,15 @@ btnAgregar.addEventListener("click", () =>{
     atGasto.innerHTML = "$ Gasto";
     atCorreo.innerText = "correo@correo.com";
    
+});
+
+// ----- SECCION GESTION DE INVITADOS ----- //
+//Animacion botones edicion
+let contenedorRender = document.getElementById("contenedorRender");
+let renderTarjeta = document.getElementById("renderTarjeta");
+let editarBotones = document.getElementById("editarBotones");
+
+contenedorRender.addEventListener("click", () => {
+    contenedorRender.classList.toggle("scale");
+    editarBotones.classList.toggle("display");
 });
