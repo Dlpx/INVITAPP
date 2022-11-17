@@ -108,7 +108,10 @@ btnAgregar.addEventListener("click", () =>{
     atLleva.innerText = "Item";
     atGasto.innerHTML = "$ Gasto";
     atCorreo.innerText = "correo@correo.com";
-   
+    
+    //Reseteo de Formularios
+    let formulario = document.getElementById("añadirForm");
+    formulario.reset();
 });
 
 // ----- SECCION GESTION DE INVITADOS ----- //
