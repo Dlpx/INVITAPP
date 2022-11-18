@@ -1,7 +1,8 @@
 //MENU DESPLEGABLE
-let botonDesplegar = document.getElementById("boton-desplegar");
+let btnLogo = document.getElementById("logo");
+let btnFlechas = document.getElementById("img-boton");
 let botonesMenu = document.querySelectorAll(".nav-link");
-let logoBtn = document.getElementById("logo");
+
 function menuDesplegable(){
     let desplegable = document.getElementById("desplegable");
     desplegable.classList.toggle("desplegar");
@@ -9,15 +10,14 @@ function menuDesplegable(){
     let navBar = document.getElementById("nav-bar");
     navBar.classList.toggle("ocultar");
 
-    let imgBoton = document.getElementById("img-boton");
-    imgBoton.classList.toggle("rotar180");
+    btnFlechas.classList.toggle("rotar180");
 }
-botonDesplegar.addEventListener("click", menuDesplegable);
-logoBtn.addEventListener("click", menuDesplegable);
+btnLogo.addEventListener("click", menuDesplegable);
 botonesMenu.forEach(elemento => 
     elemento.addEventListener("click", menuDesplegable));
 
 // ----- SECCION AÑADIR INVITADO ----- //
+//ARREGLO LISTA INVITADOS
 let listaInvitados = [];
 
 //Variables formulario:
@@ -120,7 +120,7 @@ btnAgregar.addEventListener("click", () =>{
             <p id="btnEditCorreo-${nuevoInvitado.numero}" class="btn correo">Editar Correo</p>
         </div>
         `;
-    
+   
         //Asigno el padre al hijo
     contenedorInvitados.append(divContenedor);
     

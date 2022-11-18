@@ -28,77 +28,74 @@ header {
     top: 0;
     z-index: 10;
 }
-header .logo {
-    width: 100%;
-    height: 10vh;
-    background-color: #405059;
-    box-shadow: 5px 0 5px black;
-    margin: 0;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: var(--color-verde);
-    z-index: 10;
-    cursor: pointer;
-}
-header .desplegable {
-    position: absolute;
-    top: -26vh;
-    width: 100%;
+header #desplegable{
+    width: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--color-gris);
+    position: absolute;
+    top: -24vh;
     transition: all 300ms ease-in-out;
-
-    z-index: 1;
 }
-header .desplegable .nav-bar{
-    width: 100%;
+header #desplegable #nav-bar{
+    width: inherit;
 }
-header .desplegable .nav-bar .nav-list{
-    width: 100%;
+header #desplegable #nav-bar .nav-list{
+    width: inherit;
 }
-header .desplegable .nav-bar .nav-list .nav-item{
-    width: 100%;
+header #desplegable #nav-bar .nav-list .nav-item{
+    width: inherit;
 }
-header .desplegable .nav-bar .nav-list .nav-item .nav-link{
+header #desplegable #nav-bar .nav-list .nav-item .nav-link{
     display: block;
-    width: 100%;
+    width: inherit;
+    border: none;
     text-align: center;
     line-height: 40px;
     color: var(--color-verde);
+    background-color: var(--color-gris);
     font-size: 1.5rem;
     font-weight: 500;
     text-transform: uppercase;
     padding: 10px 0;
+    transition: all 150ms ease-in-out;
 }
-header .desplegable .nav-bar .nav-list .nav-item .nav-link:hover{
- background-color: var(--color-verde);
- color: var(--color-gris);
+header #desplegable #nav-bar .nav-list .nav-item #nav-link:hover{
+    background-color: var(--color-verde);
+    color: var(--color-gris);
 }
-header .desplegable #boton-desplegar{
-    border: none;
-    border-radius: 0px;
-    background-color: transparent;
-    color: var(--color-verde);
-    font-size: 1.5rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 10px 0;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
 
+header #desplegable #logo{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    cursor: pointer;
+    background-color: var(--color-gris);
 }
-header .desplegable #boton-desplegar img{
+header #desplegable #logo p{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--color-verde);
+    margin-right: 20px;
+}
+header #desplegable #logo #boton-desplegar{
+    background-color: transparent;
+    border: none;
+}
+header #desplegable #logo #boton-desplegar img{
     transition: all 300ms ease-in-out;
 }
 
 /* VARIABLES JS */
 .desplegar{
-    transform: translateY(35vh);
+    transform: translateY(25vh);
 }
+
 .rotar180{
     transform: rotate(-180deg);
 }
@@ -107,6 +104,7 @@ header .desplegable #boton-desplegar img{
     opacity: 0;
     transition: all 300ms ease-in-out;
 }
+
 
 /* MAIN */
 main{
