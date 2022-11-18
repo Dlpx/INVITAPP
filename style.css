@@ -246,11 +246,13 @@ main section .subtitulo{
     width: 100%;
 }
 #lista .contenedorInvitados{
+    width: 80vw;
+    margin: auto;
     padding: 0 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 #lista .contenedorInvitados > div{
     display: flex;
@@ -259,6 +261,7 @@ main section .subtitulo{
 }
 /* TARJETA */
 #lista .contenedorInvitados div .contenedorRender{
+    margin: 20px 30px;
     padding: 10px;
     background: linear-gradient(-45deg, var(--color-turquesa), var(--color-verde));
     border-radius: 5%;
@@ -274,7 +277,7 @@ main section .subtitulo{
     align-items: center;
     justify-content: space-evenly;
     background-color: rgba(255, 255, 255, 0.9);
-    width: fit-content;
+    width: 150px;
     padding: 5px;
     cursor: pointer;
     transition: all 150ms ease-in-out;
