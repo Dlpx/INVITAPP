@@ -301,13 +301,7 @@ main section .subtitulo{
     word-wrap: break-word;
 }
 /* BOTONES DE EDICION */
-.display{
-    display: inline-block !important;
-}
-.scale{
-    transform: scale(1.1);
-}
-#lista .contenedorInvitados div .editarBotones{
+/* #lista .contenedorInvitados div .editarBotones{
     z-index: 2;
     position: relative;
     left: -20px;
@@ -324,4 +318,4 @@ main section .subtitulo{
 }
 #lista .contenedorInvitados div .editarBotones .btn:hover{
     background-color: var(--color-anaranjado);
-}
+} */
