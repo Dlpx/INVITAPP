@@ -169,7 +169,13 @@ btnLimpiarLS.addEventListener("click", () => {
     hijos.forEach(hijo => {
         contenedorInvitados.remove(hijo);
     });
-    // location.reload();
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Los invitados se fueron',
+        showConfirmButton: false,
+        timer: 2000
+      })
 });
 
 // ----- SECCION GESTION DE INVITADOS ----- //
