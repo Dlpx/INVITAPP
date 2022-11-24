@@ -18,7 +18,7 @@ botonesMenu.forEach(elemento =>
 
 // ----- SECCION AÑADIR INVITADO ----- //
 //ARREGLO LISTA INVITADOS
-let listaInvitados = [];
+let listaInvitados = JSON.parse(localStorage.getItem("listaInvitados"));
 
 //Variables formulario:
 let numeroActualizado;
@@ -36,23 +36,26 @@ let atLleva;
 let atGasto;
 let atCorreo;
 
+//Actualizacion nombre y numero
+nombreInvitado = document.getElementById("nombreInvitado");
+nombreInvitado.addEventListener("input", () => {
+    if(listaInvitados != null){
+        numeroActualizado = listaInvitados.length + 1;
+    } else{numeroActualizado = 1}
+
+    atNumero = document.getElementById("atNumero");
+    atNumero.innerText=parseInt(numeroActualizado);
+    atNombre = document.getElementById("atNombre");
+    atNombre.innerText="";
+    atNombre.innerText=nombreInvitado.value;
+});
+
 //actualizacion AVATAR
 avatarInvitado = document.getElementById("avatarInvitado");
 avatarInvitado.addEventListener("change", () => {
     let avatar = avatarInvitado.options[avatarInvitado.selectedIndex].text;
     atAvatar = document.getElementById("atAvatar");
     atAvatar.innerHTML=`<img src="./img/Usuarios/${avatar}.png" alt="tipo de usuario">`;
-});
-
-//Actualizacion nombre y numero
-nombreInvitado = document.getElementById("nombreInvitado");
-nombreInvitado.addEventListener("input", () => {
-    numeroActualizado = listaInvitados.length + 1;
-    atNumero = document.getElementById("atNumero");
-    atNumero.innerText=parseInt(numeroActualizado);
-    atNombre = document.getElementById("atNombre");
-    atNombre.innerText="";
-    atNombre.innerText=nombreInvitado.value;
 });
 
 //Actualizacion de ITEM
@@ -95,9 +98,18 @@ let btnAgregar = document.getElementById("btnAgregar");
 
 btnAgregar.addEventListener("click", () =>{
         //Creo nuevo usuario y lo pusheo
-    let invitado = new Persona(Number(atNumero.innerText), atAvatar.innerHTML, atNombre.innerText, atLleva.innerText, Number(gastoInvitado.value), atCorreo.innerText);
-    listaInvitados.push(invitado);
-    
+    let invitadoNuevo = new Persona(Number(atNumero.innerText), atAvatar.innerHTML, atNombre.innerText, atLleva.innerText, Number(gastoInvitado.value), atCorreo.innerText);
+        //Comprobar LS
+    if(localStorage.getItem("listaInvitados") == null){
+        localStorage.setItem("listaInvitados", "[]");
+    }
+        //CODIGO REPETIDO... (linea 21)
+    listaInvitados = JSON.parse(localStorage.getItem("listaInvitados")); 
+        //Pusheo el invitado
+    listaInvitados.push(invitadoNuevo);
+        //Guardado en LS
+    localStorage.setItem("listaInvitados", JSON.stringify(listaInvitados));
+       
         //Creacion de nueva tarjeta
     let contenedorInvitados = document.getElementById("contenedorInvitados");
         //Creamos etiqueta div
@@ -106,38 +118,38 @@ btnAgregar.addEventListener("click", () =>{
     divContenedor.innerHTML = `
         <div id="contenedorRender" class="contenedorRender">
             <div id="renderTarjeta" class="renderTarjeta">
-                <div id="numero-${invitado.numero}" class="num">${invitado.numero}</div>
-                <div id="avatar-${invitado.numero}" class="ava">${invitado.avatar}</div>
-                <div id="nombre-${invitado.numero}" class="nom">${invitado.nombre}</div>
-                <div id="item-${invitado.numero}" class="ite">${invitado.item}</div>
-                <div id="gasto-${invitado.numero}" class="gas">$ ${invitado.gasto}</div>
-                <div id="correo-${invitado.numero}" class="cor">${invitado.correo}</div>
+                <div id="numero-${invitadoNuevo.numero}" class="num">${invitadoNuevo.numero}</div>
+                <div id="avatar-${invitadoNuevo.numero}" class="ava">${invitadoNuevo.avatar}</div>
+                <div id="nombre-${invitadoNuevo.numero}" class="nom">${invitadoNuevo.nombre}</div>
+                <div id="item-${invitadoNuevo.numero}" class="ite">${invitadoNuevo.item}</div>
+                <div id="gasto-${invitadoNuevo.numero}" class="gas">$ ${invitadoNuevo.gasto}</div>
+                <div id="correo-${invitadoNuevo.numero}" class="cor">${invitadoNuevo.correo}</div>
             </div>
         </div>
         `;
         // Saque los botones temporalmente.. 
         // <div id="editarBotones" class="editarBotones">
-        //     <p id="btnEditAvatar-${invitado.numero}" class="btn avatar">Editar Avatar</p>
-        //     <p id="btnEditNombre-${invitado.numero}" class="btn nombre">Editar Nombre</p>
-        //     <p id="btnEditItems-${invitado.numero}" class="btn items">Editar Items</p>
-        //     <p id="btnEditGastos-${invitado.numero}" class="btn gastos">Editar Gastos</p>
-        //     <p id="btnEditCorreo-${invitado.numero}" class="btn correo">Editar Correo</p>
+        //     <p id="btnEditAvatar-${invitadoNuevo.numero}" class="btn avatar">Editar Avatar</p>
+        //     <p id="btnEditNombre-${invitadoNuevo.numero}" class="btn nombre">Editar Nombre</p>
+        //     <p id="btnEditItems-${invitadoNuevo.numero}" class="btn items">Editar Items</p>
+        //     <p id="btnEditGastos-${invitadoNuevo.numero}" class="btn gastos">Editar Gastos</p>
+        //     <p id="btnEditCorreo-${invitadoNuevo.numero}" class="btn correo">Editar Correo</p>
         // </div>
    
-        //Asigno el padre al hijo
-    contenedorInvitados.append(divContenedor);
-    
-    //Reseteo de tarjeta
-    atNumero.innerText = "N°";
-    atAvatar.innerHTML = `<img src="./img/Usuarios/Ninguno.png" alt="tipo de usuario">`;
-    atNombre.innerText = "Nombre";
-    atLleva.innerText = "Item";
-    atGasto.innerHTML = "$ Gasto";
-    atCorreo.innerText = "correo@correo.com";
-    
-    //Reseteo de Formularios
-    let formulario = document.getElementById("añadirForm");
-    formulario.reset();
+            //Asigno el padre al hijo
+        contenedorInvitados.append(divContenedor);
+        
+            //Reseteo de tarjeta
+        atNumero.innerText = "N°";
+        atAvatar.innerHTML = `<img src="./img/Usuarios/Ninguno.png" alt="tipo de usuario">`;
+        atNombre.innerText = "Nombre";
+        atLleva.innerText = "Item";
+        atGasto.innerHTML = "$ Gasto";
+        atCorreo.innerText = "correo@correo.com";
+        
+            //Reseteo de Formularios
+        let formulario = document.getElementById("añadirForm");
+        formulario.reset();
 });
 
 // ----- SECCION GESTION DE INVITADOS ----- //
