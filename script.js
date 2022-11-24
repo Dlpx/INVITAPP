@@ -152,7 +152,17 @@ btnAgregar.addEventListener("click", () =>{
         formulario.reset();
 });
 
+//Boton de limpiar LS
+let btnLimpiarLS = document.getElementById("btnLimpiarLS");
+btnLimpiarLS.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+});
+
 // ----- SECCION GESTION DE INVITADOS ----- //
+
+
+// ----- AL CARGAR LA PAGINA ----- //
 
 window.addEventListener("DOMContentLoaded", () => {
     if(listaInvitados != null){
