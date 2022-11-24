@@ -153,3 +153,39 @@ btnAgregar.addEventListener("click", () =>{
 });
 
 // ----- SECCION GESTION DE INVITADOS ----- //
+
+window.addEventListener("DOMContentLoaded", () => {
+    if(listaInvitados != null){
+        listaInvitados.forEach(invitado => {
+            //Creacion de nueva tarjeta
+        let contenedorInvitados = document.getElementById("contenedorInvitados");
+            //Creamos etiqueta div
+        let divContenedor = document.createElement("div");
+            //Añadimos Contenido
+        divContenedor.innerHTML = `
+            <div id="contenedorRender" class="contenedorRender">
+                <div id="renderTarjeta" class="renderTarjeta">
+                    <div id="numero-${invitado.numero}" class="num">${invitado.numero}</div>
+                    <div id="avatar-${invitado.numero}" class="ava">${invitado.avatar}</div>
+                    <div id="nombre-${invitado.numero}" class="nom">${invitado.nombre}</div>
+                    <div id="item-${invitado.numero}" class="ite">${invitado.item}</div>
+                    <div id="gasto-${invitado.numero}" class="gas">$ ${invitado.gasto}</div>
+                    <div id="correo-${invitado.numero}" class="cor">${invitado.correo}</div>
+                </div>
+            </div>
+            `;
+            // Saque los botones temporalmente.. 
+            // <div id="editarBotones" class="editarBotones">
+            //     <p id="btnEditAvatar-${invitado.numero}" class="btn avatar">Editar Avatar</p>
+            //     <p id="btnEditNombre-${invitado.numero}" class="btn nombre">Editar Nombre</p>
+            //     <p id="btnEditItems-${invitado.numero}" class="btn items">Editar Items</p>
+            //     <p id="btnEditGastos-${invitado.numero}" class="btn gastos">Editar Gastos</p>
+            //     <p id="btnEditCorreo-${invitado.numero}" class="btn correo">Editar Correo</p>
+            // </div>
+
+                //Asigno el padre al hijo
+            contenedorInvitados.append(divContenedor);
+            
+                });
+    }
+  });
