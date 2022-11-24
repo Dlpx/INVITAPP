@@ -150,13 +150,26 @@ btnAgregar.addEventListener("click", () =>{
             //Reseteo de Formularios
         let formulario = document.getElementById("añadirForm");
         formulario.reset();
+
+        //SWEETALERT
+        Swal.fire({
+            icon: 'success',
+            title: 'PERFECTO',
+            text: 'Invitado añadido correctamente',
+          });
 });
 
 //Boton de limpiar LS
 let btnLimpiarLS = document.getElementById("btnLimpiarLS");
 btnLimpiarLS.addEventListener("click", () => {
     localStorage.clear();
-    location.reload();
+    listaInvitados = JSON.parse(localStorage.getItem("listaInvitados"));
+    let contenedorInvitados = document.getElementById("contenedorInvitados");
+    let hijos = document.querySelectorAll(".contenedorInvitados div");
+    hijos.forEach(hijo => {
+        contenedorInvitados.remove(hijo);
+    });
+    // location.reload();
 });
 
 // ----- SECCION GESTION DE INVITADOS ----- //
