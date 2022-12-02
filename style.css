@@ -151,10 +151,12 @@ main section .subtitulo{
     border-bottom: 2px black double;
 }
 #añadir .contenedor{
-    width: 100%;
+    width: 800px;
+    margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 #añadir .contenedor .añadir-tarjeta{
     display: flex;
@@ -174,7 +176,8 @@ main section .subtitulo{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
+    width: 200px;
+    height: 250px;
     border: 1px black solid;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.9);
@@ -223,7 +226,7 @@ main section .subtitulo{
     flex-direction: column;
     align-items: center;
 }
-#añadir .contenedor #añadirForm > .inputs{
+#añadir .contenedor #añadirForm .inputs{
     width: 300px;
     height: 50px;
     padding: 0 3px;
@@ -233,10 +236,23 @@ main section .subtitulo{
     color: var(--color-gris);
     font-size: 1.5rem;
 }
-#añadir .contenedor #añadirForm > label{
+#añadir .contenedor #añadirForm .inputs::placeholder{
+    color: rgb(175, 175, 175);
+    font-size: small;
+    text-align: center;
+}
+#añadir .contenedor #añadirForm label{
     width: 300px;
     height: 20px;
     margin: 14px 0 0 0;
+}
+#añadir .contenedor #añadirForm .btnNuevoGasto{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px black solid;
+    align-self: flex-end;
+    cursor: pointer;
 }
 
 /* Seccion de Gestion de invitados */

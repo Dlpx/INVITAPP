@@ -109,7 +109,8 @@ btnAgregar.addEventListener("click", () =>{
     listaInvitados.push(invitadoNuevo);
         //Guardado en LS
     localStorage.setItem("listaInvitados", JSON.stringify(listaInvitados));
-       
+    
+
         //Creacion de nueva tarjeta
     let contenedorInvitados = document.getElementById("contenedorInvitados");
         //Creamos etiqueta div
@@ -185,6 +186,10 @@ btnLimpiarLS.addEventListener("click", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
     if(listaInvitados != null){
+        //MOSTRAR SECCION
+        
+
+        //RENDERIZAR TARJETAS DEL LStorage
         listaInvitados.forEach(invitado => {
             //Creacion de nueva tarjeta
         let contenedorInvitados = document.getElementById("contenedorInvitados");

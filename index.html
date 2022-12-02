@@ -23,11 +23,12 @@
             </nav>
             <div class="logo" id="logo">
                 <p>INVITAPP</p>
-                <button id="boton-desplegar"><img id="img-boton" src="./img/flechaMenu.png" alt="Flecha menu desplegable"></button>
+                <button id="boton-desplegar"><img id="img-boton" src="./img/flechaMenu.png"
+                        alt="Flecha menu desplegable"></button>
             </div>
         </div>
     </header>
-    <main>
+    <main id="main">
         <section id="inicio">
             <h1 id="bienvenida">Bienvenidos</h1>
             <p class="texto-bienvenida">
@@ -39,20 +40,12 @@
         <section id="añadir">
             <h2 class="subtitulo">Añadir invitado</h2>
             <div class="contenedor">
-                <div class="añadir-tarjeta">
-                    <div class="tarjeta">
-                        <div id="atNumero">N°</div>
-                        <div id="atAvatar"><img src="./img/Usuarios/Ninguno.png" alt="tipo de usuario"></div>
-                        <div id="atNombre">Nombre</div>
-                        <div id="atLleva">Item</div>
-                        <div id="atGasto">$ Gasto</div>
-                        <div id="atCorreo">correo@gmail.com</div>
-                    </div>
-                    <p id="btnAgregar" type="submit">Añadir</p>
-                </div>
                 <form action="#" method="get" id="añadirForm">
                     <label for="nombreInvitado">Nombre del invitado:</label>
                     <input class="inputs" type="text" name="nombreInvitado" id="nombreInvitado">
+                    <label for="mailInvitado">eMail:</label>
+                    <input class="inputs" type="email" name="correoInvitado" id="correoInvitado"
+                        placeholder="*opcional*">
                     <label for="avatarInvitado">Avatar:</label>
                     <select class="inputs" name="avatarInvitado" id="avatarInvitado">
                         <option value="Ninguno">Ninguno</option>
@@ -77,13 +70,24 @@
                         <option value="Princesa">Princesa</option>
                         <option value="Vaquero">Vaquero</option>
                     </select>
-                    <label for="llevaInvitado">¿Que lleva? (solo un item)</label>
-                    <input class="inputs" type="text" name="llevaInvitado" id="llevaInvitado">
+                    <label for="llevaInvitado">¿Que lleva?</label>
+                    <input class="inputs" type="text" name="llevaInvitado" id="llevaInvitado"
+                        placeholder="(de a un item por vez)">
                     <label for="gastoInvitado">¿Cuanto gasto?</label>
                     <input class="inputs" type="number" name="gastoInvitado" id="gastoInvitado">
-                    <label for="mailInvitado">eMail:</label>
-                    <input class="inputs" type="email" name="correoInvitado" id="correoInvitado">
+                    <button class="btnNuevoGasto">Nuevo gasto</button>
                 </form>
+                <div class="añadir-tarjeta">
+                    <div class="tarjeta">
+                        <div id="atNumero">N°</div>
+                        <div id="atAvatar"><img src="./img/Usuarios/Ninguno.png" alt="tipo de usuario"></div>
+                        <div id="atNombre">Nombre</div>
+                        <div id="atLleva">Item</div>
+                        <div id="atGasto">$ Gasto</div>
+                        <div id="atCorreo">correo@gmail.com</div>
+                    </div>
+                    <p id="btnAgregar" type="submit">Añadir</p>
+                </div>
             </div>
         </section>
         <section id="lista">
@@ -110,16 +114,16 @@
                 </div> -->
             </div>
             <p id="btnLimpiarLS">Limpiar lista</p>
-        </section>
-        <section id="ver">
+        </section> -->
+        <!-- <section id="ver">
             <h2 class="subtitulo">Gastos generales</h2>
         </section>
     </main>
 
 
     <!-- SCRIPTS -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./script.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./script.js"></script>
 </body>
 
 </html>
