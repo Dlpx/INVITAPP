@@ -140,8 +140,13 @@ class Persona {
 let btnAgregar = document.getElementById("btnAgregar");
 
 btnAgregar.addEventListener("click", () =>{
+        // CALCULAR GASTOS DEL INVITADO
+    let gastoTotalInvitado = 0;
+    gastos.forEach(gasto => {
+        gastoTotalInvitado += gasto.costo;
+    });
         //Creo nuevo usuario y lo pusheo
-    let invitadoNuevo = new Persona(Number(atNumero.innerText), atAvatar.innerHTML, atNombre.innerText, atLleva.innerText, Number(gastoInvitado.value), atCorreo.innerText);
+    let invitadoNuevo = new Persona(Number(atNumero.innerText), atAvatar.innerHTML, atNombre.innerText, atLleva.innerHTML, Number(gastoTotalInvitado), atCorreo.innerText);
         //Comprobar LS
     if(localStorage.getItem("listaInvitados") == null){
         localStorage.setItem("listaInvitados", "[]");
