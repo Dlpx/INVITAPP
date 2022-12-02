@@ -176,6 +176,7 @@ main section .subtitulo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 200px;
     height: 250px;
     border: 1px black solid;
@@ -196,8 +197,22 @@ main section .subtitulo{
 }
 #añadir .contenedor .añadir-tarjeta .tarjeta #atGasto{
     align-self: flex-end;
-    margin: 15px 5px 0 0;
+    margin: 5px 5px 0 0;
     border-top: 1px solid black ;
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta #atLleva{
+    width: 90%;
+    height: 95px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta #atLleva::-webkit-scrollbar{
+    display: none;
+}
+#añadir .contenedor .añadir-tarjeta .tarjeta #atLleva p{
+    align-self: flex-start;
 }
 #añadir .contenedor .añadir-tarjeta .tarjeta #atCorreo{
     margin: 10px 6px 5px 6px;

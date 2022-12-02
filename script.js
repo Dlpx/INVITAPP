@@ -13,7 +13,7 @@ function menuDesplegable(){
     btnFlechas.classList.toggle("rotar180");
 }
 btnLogo.addEventListener("click", menuDesplegable);
-botonesMenu.forEach(elemento => 
+botonesMenu.forEach(elemento =>
     elemento.addEventListener("click", menuDesplegable));
 
 // ----- SECCION AÑADIR INVITADO ----- //
@@ -58,19 +58,62 @@ avatarInvitado.addEventListener("change", () => {
     atAvatar.innerHTML=`<img src="./img/Usuarios/${avatar}.png" alt="tipo de usuario">`;
 });
 
-//Actualizacion de ITEM
-llevaInvitado = document.getElementById("llevaInvitado");
-atLleva = document.getElementById("atLleva");
-llevaInvitado.addEventListener("input", () =>{
-    atLleva.innerText = llevaInvitado.value;
-});
+// SECCION AÑADIR GASTOS
+let gastos = [];
+class gasto {
+    constructor(id, item, costo){
+        this.id = id;
+        this.item = item;
+        this.costo = costo;
+    }
+}
 
-//Actualizacion de GASTO
-atGasto = document.getElementById("atGasto");
-gastoInvitado = document.getElementById("gastoInvitado");
-gastoInvitado.addEventListener("input", () => {
-    atGasto.innerText = `$ ${gastoInvitado.value}`;
-});
+const btnNuevoGasto = document.getElementById("btnNuevoGasto");
+btnNuevoGasto.addEventListener("click", () => {
+    // Genero ID del gasto
+    let id = gastos.length + 1;
+    // Genero item
+    llevaInvitado = document.getElementById("llevaInvitado");
+    // Guardo el costo
+    gastoInvitado = document.getElementById("gastoInvitado");
+    // CREO Y ALMACENO EL OBJETO GASTO EN ARRAY GASTOS
+    let nuevoGasto = new gasto (id, llevaInvitado.value, Number(gastoInvitado.value));
+    gastos.push(nuevoGasto);
+
+    atLleva = document.getElementById("atLleva");
+    let li = document.createElement("li");
+    li.className = "llevaItem";
+    li.innerHTML = `${llevaInvitado.value}`;
+    atLleva.append(li);
+
+    atGasto = document.getElementById("atGasto");
+    let gastoActual = 0;
+    gastos.forEach(gasto => {
+        gastoActual += gasto.costo;
+    });
+    atGasto.innerHTML = `$ ${gastoActual}`;
+
+    // Reset Item y Costo
+    llevaInvitado.value = ``;
+    gastoInvitado.value = ``;
+
+})
+
+
+
+// //Actualizacion de ITEM
+// llevaInvitado = document.getElementById("llevaInvitado");
+// atLleva = document.getElementById("atLleva");
+// llevaInvitado.addEventListener("input", () =>{
+//     atLleva.innerText = llevaInvitado.value;
+// });
+
+// //Actualizacion de GASTO
+// atGasto = document.getElementById("atGasto");
+// gastoInvitado = document.getElementById("gastoInvitado");
+// gastoInvitado.addEventListener("input", () => {
+//     atGasto.innerText = `$ ${gastoInvitado.value}`;
+// });
 
 //Actualizacion de eMail
 atCorreo = document.getElementById("atCorreo");
@@ -104,12 +147,12 @@ btnAgregar.addEventListener("click", () =>{
         localStorage.setItem("listaInvitados", "[]");
     }
         //CODIGO REPETIDO... (linea 21)
-    listaInvitados = JSON.parse(localStorage.getItem("listaInvitados")); 
+    listaInvitados = JSON.parse(localStorage.getItem("listaInvitados"));
         //Pusheo el invitado
     listaInvitados.push(invitadoNuevo);
         //Guardado en LS
     localStorage.setItem("listaInvitados", JSON.stringify(listaInvitados));
-    
+
 
         //Creacion de nueva tarjeta
     let contenedorInvitados = document.getElementById("contenedorInvitados");
@@ -128,7 +171,7 @@ btnAgregar.addEventListener("click", () =>{
             </div>
         </div>
         `;
-        // Saque los botones temporalmente.. 
+        // Saque los botones temporalmente..
         // <div id="editarBotones" class="editarBotones">
         //     <p id="btnEditAvatar-${invitadoNuevo.numero}" class="btn avatar">Editar Avatar</p>
         //     <p id="btnEditNombre-${invitadoNuevo.numero}" class="btn nombre">Editar Nombre</p>
@@ -136,10 +179,10 @@ btnAgregar.addEventListener("click", () =>{
         //     <p id="btnEditGastos-${invitadoNuevo.numero}" class="btn gastos">Editar Gastos</p>
         //     <p id="btnEditCorreo-${invitadoNuevo.numero}" class="btn correo">Editar Correo</p>
         // </div>
-   
+
             //Asigno el padre al hijo
         contenedorInvitados.append(divContenedor);
-        
+
             //Reseteo de tarjeta
         atNumero.innerText = "N°";
         atAvatar.innerHTML = `<img src="./img/Usuarios/Ninguno.png" alt="tipo de usuario">`;
@@ -147,7 +190,7 @@ btnAgregar.addEventListener("click", () =>{
         atLleva.innerText = "Item";
         atGasto.innerHTML = "$ Gasto";
         atCorreo.innerText = "correo@correo.com";
-        
+
             //Reseteo de Formularios
         let formulario = document.getElementById("añadirForm");
         formulario.reset();
@@ -187,7 +230,7 @@ btnLimpiarLS.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
     if(listaInvitados != null){
         //MOSTRAR SECCION
-        
+
 
         //RENDERIZAR TARJETAS DEL LStorage
         listaInvitados.forEach(invitado => {
@@ -208,7 +251,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
             `;
-            // Saque los botones temporalmente.. 
+            // Saque los botones temporalmente..
             // <div id="editarBotones" class="editarBotones">
             //     <p id="btnEditAvatar-${invitado.numero}" class="btn avatar">Editar Avatar</p>
             //     <p id="btnEditNombre-${invitado.numero}" class="btn nombre">Editar Nombre</p>
@@ -219,7 +262,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 //Asigno el padre al hijo
             contenedorInvitados.append(divContenedor);
-            
+
                 });
     }
   });

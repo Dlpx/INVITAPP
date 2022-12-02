@@ -70,23 +70,27 @@
                         <option value="Princesa">Princesa</option>
                         <option value="Vaquero">Vaquero</option>
                     </select>
-                    <label for="llevaInvitado">¿Que lleva?</label>
-                    <input class="inputs" type="text" name="llevaInvitado" id="llevaInvitado"
+                    <form action="#" method="get" id="formGastos">
+                        <label for="llevaInvitado">¿Que lleva?</label>
+                        <input class="inputs" type="text" name="llevaInvitado" id="llevaInvitado"
                         placeholder="(de a un item por vez)">
-                    <label for="gastoInvitado">¿Cuanto gasto?</label>
-                    <input class="inputs" type="number" name="gastoInvitado" id="gastoInvitado">
-                    <button class="btnNuevoGasto">Nuevo gasto</button>
+                        <label for="gastoInvitado">¿Cuanto gasto?</label>
+                        <input class="inputs" type="number" name="gastoInvitado" id="gastoInvitado">
+                        <p class="btnNuevoGasto" id="btnNuevoGasto">Nuevo gasto</p>
+                    </form>
                 </form>
                 <div class="añadir-tarjeta">
                     <div class="tarjeta">
                         <div id="atNumero">N°</div>
                         <div id="atAvatar"><img src="./img/Usuarios/Ninguno.png" alt="tipo de usuario"></div>
                         <div id="atNombre">Nombre</div>
-                        <div id="atLleva">Item</div>
+                        <ul id="atLleva">
+                            <p>Items:</p>
+                        </ul>
                         <div id="atGasto">$ Gasto</div>
                         <div id="atCorreo">correo@gmail.com</div>
                     </div>
-                    <p id="btnAgregar" type="submit">Añadir</p>
+                    <p id="btnAgregar" type="submit">Añadir Invitado</p>
                 </div>
             </div>
         </section>
