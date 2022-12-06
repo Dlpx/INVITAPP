@@ -330,7 +330,8 @@ main section .subtitulo{
     align-items: center;
     justify-content: space-evenly;
     background-color: rgba(255, 255, 255, 0.9);
-    width: 150px;
+    width: 200px;
+    height: 250px;
     padding: 5px;
     cursor: pointer;
     transition: all 150ms ease-in-out;
@@ -355,7 +356,7 @@ main section .subtitulo{
     color: rgb(165, 165, 165);
     word-wrap: break-word;
 }
-/* BOTONES DE EDICION */
+/* BOTONES DE EDICION  *los saque temporalmente* */
 /* #lista .contenedorInvitados div .editarBotones{
     z-index: 2;
     position: relative;

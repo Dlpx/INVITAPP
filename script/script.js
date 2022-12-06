@@ -39,10 +39,8 @@ let atCorreo;
 //Actualizacion nombre y numero
 nombreInvitado = document.getElementById("nombreInvitado");
 nombreInvitado.addEventListener("input", () => {
-    if(listaInvitados != null){
-        numeroActualizado = listaInvitados.length + 1;
-    } else{numeroActualizado = 1}
-
+    listaInvitados != null ? numeroActualizado = listaInvitados.length + 1 : numeroActualizado = 1;
+    
     atNumero = document.getElementById("atNumero");
     atNumero.innerText=parseInt(numeroActualizado);
     atNombre = document.getElementById("atNombre");
@@ -147,7 +145,7 @@ btnAgregar.addEventListener("click", () =>{
     });
         //Creo nuevo usuario y lo pusheo
     let invitadoNuevo = new Persona(Number(atNumero.innerText), atAvatar.innerHTML, atNombre.innerText, atLleva.innerHTML, Number(gastoTotalInvitado), atCorreo.innerText);
-        //Comprobar LS
+        //Comprobar LS     
     if(localStorage.getItem("listaInvitados") == null){
         localStorage.setItem("listaInvitados", "[]");
     }
