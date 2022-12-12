@@ -1,0 +1,12 @@
+[
+{"numero": "A", "avatar": "Cristiano", "nombre": "Nicolas", "item": "Pizzas", "gasto": "100", "correo": "nico@correo.com"},
+{"numero": "B", "avatar": "Constructora", "nombre": "Fiorella", "item": "Helado", "gasto": "150", "correo": "fio@correo.com"},
+{"numero": "C", "avatar": "Doctor", "nombre": "Jose Luis", "item": "Carne", "gasto": "200", "correo": "jose@correo.com"},
+{"numero": "D", "avatar": "Doctora", "nombre": "Silvina", "item": "Coca Cola", "gasto": "80", "correo": "silvina@correo.com"},
+{"numero": "E", "avatar": "Princesa", "nombre": "Natalia", "item": "Lemon Pie", "gasto": "80", "correo": "nati@correo.com"},
+{"numero": "F", "avatar": "Constructor", "nombre": "Carlos", "item": "Carbon", "gasto": "50", "correo": "carlos@correo.com"},
+{"numero": "G", "avatar": "Empresaria", "nombre": "Sandra", "item": "Limonada", "gasto": "30", "correo": "sandra@correo.com"},
+{"numero": "H", "avatar": "Cocinero", "nombre": "Giancarlo", "item": "Pan", "gasto": "30", "correo": "gianca@correo.com"},
+{"numero": "I", "avatar": "Cientifica", "nombre": "Estefania", "item": "Dips", "gasto": "80", "correo": "tefa@correo.com"},
+{"numero": "J", "avatar": "Chica", "nombre": "Vicky", "item": "-", "gasto": "0", "correo": "caniche@correo.com"}    
+]
